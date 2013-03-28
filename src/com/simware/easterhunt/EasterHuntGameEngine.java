@@ -996,7 +996,7 @@ public class EasterHuntGameEngine extends SurfaceView implements SurfaceHolder.C
         WindowManager wm = (WindowManager) EasterHuntActivity.getInstance().getSystemService(Context.WINDOW_SERVICE);        
         RectF region = new RectF(0, 0, wm.getDefaultDisplay().getWidth(), wm.getDefaultDisplay().getHeight() );
         paint.getTextBounds(text, 0, text.length(), textBounds);
-        float x = region.centerX() - textBounds.width() * 0.4f;
+        float x = region.centerX() - textBounds.width() * 0.3f;
         float y = region.centerY() + textBounds.height() * 0.4f;
         return new PointF(x, y);
     }
@@ -1029,7 +1029,7 @@ public class EasterHuntGameEngine extends SurfaceView implements SurfaceHolder.C
     protected void keyPressed( int x, int y ){
     	int centerX = this.m_maxScreenSize.x / 2;
     	int centerY = this.m_maxScreenSize.y / 2;
-    	int width = 200;
+    	int width = this.m_maxScreenSize.x/4;
 
     	if( x > centerX && (y < (centerY+width) && y > (centerY-width)) ){
     		this.keyPressed(RIGHT);
